@@ -1,8 +1,11 @@
 package com.hikizan.myfundamentalssubone
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.hikizan.myfundamentalssubone.adapter.ListGithubUserAdapter
@@ -32,6 +35,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val listGithubUsers: ArrayList<GithubUser>
+        @SuppressLint("Recycle")
         get() {
             val dataName = resources.getStringArray(R.array.data_name)
             val dataUsername = resources.getStringArray(R.array.data_username)
@@ -60,8 +64,24 @@ class MainActivity : AppCompatActivity() {
         }
 
     private fun showRecyclerList() {
-        rvGithubUser.layoutManager = LinearLayoutManager(this)
+        if (applicationContext.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE){
+            rvGithubUser.layoutManager = GridLayoutManager(this,2)
+        }else{
+            rvGithubUser.layoutManager = LinearLayoutManager(this)
+        }
         val listGithubUserAdapter = ListGithubUserAdapter(list)
         rvGithubUser.adapter = listGithubUserAdapter
+
+        listGithubUserAdapter.setOnItemClickCallback(object: ListGithubUserAdapter.OnItemClickCallback {
+            override fun onItemClicked(data: GithubUser) {
+                showSelectedGithubUser(data)
+            }
+        })
+    }
+
+    private fun showSelectedGithubUser(githubuser: GithubUser){
+        val moveWithDataParcel = Intent(this, DetailActivity::class.java)
+        moveWithDataParcel.putExtra(DetailActivity.EXTRA_DATA, githubuser)
+        startActivity(moveWithDataParcel)
     }
 }

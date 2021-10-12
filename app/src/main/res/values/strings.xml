@@ -1,8 +1,12 @@
 <resources>
     <string name="app_name">MyFundamentalsSubOne</string>
 
-    <string name="github_name">Nama Github</string>
+    <string name="github_name">Name Github</string>
     <string name="github_username">Username Github</string>
+    <string name="github_company">Company Github</string>
+    <string name="repository">Repository</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
 
     <string-array name="data_username">
         <item>JakeWharton</item>
