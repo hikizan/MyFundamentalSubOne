@@ -2,8 +2,10 @@ package com.hikizan.myfundamentalssubone
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.hikizan.myfundamentalssubone.adapter.ListGithubUserAdapter
@@ -62,17 +64,13 @@ class MainActivity : AppCompatActivity() {
         }
 
     private fun showRecyclerList() {
-        rvGithubUser.layoutManager = LinearLayoutManager(this)
+        if (applicationContext.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE){
+            rvGithubUser.layoutManager = GridLayoutManager(this,2)
+        }else{
+            rvGithubUser.layoutManager = LinearLayoutManager(this)
+        }
         val listGithubUserAdapter = ListGithubUserAdapter(list)
         rvGithubUser.adapter = listGithubUserAdapter
-
-        /*
-        rvGithubUser.adapter = ScaleInAnimationAdapter(listGithubUserAdapter).apply {
-            setDuration(600)
-            setFirstOnly(false)
-        }
-
-         */
 
         listGithubUserAdapter.setOnItemClickCallback(object: ListGithubUserAdapter.OnItemClickCallback {
             override fun onItemClicked(data: GithubUser) {
