@@ -61,7 +61,7 @@
                     android:layout_alignTop="@+id/cv_img"
                     android:layout_marginTop="18dp"
                     android:layout_marginEnd="12dp"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginBottom="8dp"
                     android:layout_toEndOf="@+id/cv_img"
                     android:textColor="@color/black"
                     android:textSize="18sp"
@@ -72,9 +72,10 @@
                     android:id="@+id/tv_item_company"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignBottom="@+id/cv_img"
+                    android:layout_above="@+id/tv_item_location"
+                    android:layout_below="@+id/tv_item_name"
                     android:layout_marginEnd="12dp"
-                    android:layout_marginBottom="24dp"
+                    android:layout_marginBottom="12dp"
                     android:layout_toEndOf="@+id/cv_img"
                     android:textSize="16sp"
                     tools:text="@string/github_company" />
@@ -114,11 +115,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_itemleft"
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:elevation="2dp"
-            android:orientation="vertical"
-            app:cardCornerRadius="8dp"
+            style="@style/DetailUser_MidCardView"
             app:layout_constraintBottom_toTopOf="@+id/guideline3"
             app:layout_constraintEnd_toStartOf="@+id/cv_itemmid"
             app:layout_constraintStart_toStartOf="@+id/cv_item_user"
@@ -126,33 +123,19 @@
             app:layout_constraintWidth_percent="0.26">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:padding="8dp"
-                android:text="@string/repository"
-                android:textColor="@color/black"
-                android:textSize="12sp" />
+                style="@style/DetailUser_TextMidCardContent"
+                android:text="@string/repository" />
 
             <TextView
                 android:id="@+id/tv_item_repository"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="8dp"
-                android:textSize="30sp"
-                android:textStyle="bold"
+                style="@style/DetailUser_ValueMidCardContent"
                 tools:text="16" />
 
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_itemmid"
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:elevation="2dp"
-            android:orientation="vertical"
-            app:cardCornerRadius="8dp"
+            style="@style/DetailUser_MidCardView"
             app:layout_constraintBottom_toTopOf="@+id/guideline3"
             app:layout_constraintEnd_toStartOf="@+id/cv_itemend"
             app:layout_constraintStart_toEndOf="@+id/cv_itemleft"
@@ -160,33 +143,19 @@
             app:layout_constraintWidth_percent="0.26">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:padding="8dp"
-                android:text="@string/followers"
-                android:textColor="@color/black"
-                android:textSize="12sp" />
+                style="@style/DetailUser_TextMidCardContent"
+                android:text="@string/followers" />
 
             <TextView
                 android:id="@+id/tv_item_followers"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="4dp"
-                android:textSize="30sp"
-                android:textStyle="bold"
+                style="@style/DetailUser_ValueMidCardContent"
                 tools:text="0" />
 
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_itemend"
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:elevation="2dp"
-            android:orientation="vertical"
-            app:cardCornerRadius="8dp"
+            style="@style/DetailUser_MidCardView"
             app:layout_constraintBottom_toTopOf="@+id/guideline3"
             app:layout_constraintEnd_toEndOf="@+id/cv_item_user"
             app:layout_constraintStart_toEndOf="@+id/cv_itemmid"
@@ -194,22 +163,12 @@
             app:layout_constraintWidth_percent="0.26">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:padding="8dp"
-                android:text="@string/following"
-                android:textColor="@color/black"
-                android:textSize="12sp" />
+                style="@style/DetailUser_TextMidCardContent"
+                android:text="@string/following" />
 
             <TextView
                 android:id="@+id/tv_item_following"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="4dp"
-                android:textSize="30sp"
-                android:textStyle="bold"
+                style="@style/DetailUser_ValueMidCardContent"
                 tools:text="3" />
 
         </androidx.cardview.widget.CardView>

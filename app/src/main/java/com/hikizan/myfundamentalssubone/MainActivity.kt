@@ -64,22 +64,23 @@ class MainActivity : AppCompatActivity() {
         }
 
     private fun showRecyclerList() {
-        if (applicationContext.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE){
-            rvGithubUser.layoutManager = GridLayoutManager(this,2)
-        }else{
+        if (applicationContext.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            rvGithubUser.layoutManager = GridLayoutManager(this, 2)
+        } else {
             rvGithubUser.layoutManager = LinearLayoutManager(this)
         }
         val listGithubUserAdapter = ListGithubUserAdapter(list)
         rvGithubUser.adapter = listGithubUserAdapter
 
-        listGithubUserAdapter.setOnItemClickCallback(object: ListGithubUserAdapter.OnItemClickCallback {
+        listGithubUserAdapter.setOnItemClickCallback(object :
+            ListGithubUserAdapter.OnItemClickCallback {
             override fun onItemClicked(data: GithubUser) {
                 showSelectedGithubUser(data)
             }
         })
     }
 
-    private fun showSelectedGithubUser(githubuser: GithubUser){
+    private fun showSelectedGithubUser(githubuser: GithubUser) {
         val moveWithDataParcel = Intent(this, DetailActivity::class.java)
         moveWithDataParcel.putExtra(DetailActivity.EXTRA_DATA, githubuser)
         startActivity(moveWithDataParcel)
