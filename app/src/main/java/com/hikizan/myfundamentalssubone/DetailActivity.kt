@@ -29,8 +29,8 @@ class DetailActivity : AppCompatActivity() {
         binding.tvItemFollowing.text = githubUser?.following.toString()
 
         Glide.with(this)
-                .load(githubUser?.photo)
-                .into(binding.imgItemPhoto)
+            .load(githubUser?.photo)
+            .into(binding.imgItemPhoto)
 
         supportActionBar?.title = githubUser?.username
 
@@ -43,7 +43,7 @@ class DetailActivity : AppCompatActivity() {
             binding.tvItemFollowing.textSize = 30F
             binding.tvItemRepository.textSize = 30F
 
-        }else{
+        } else {
             binding.tvItemFollowers.textSize = 24F
             binding.tvItemFollowing.textSize = 24F
             binding.tvItemRepository.textSize = 24F
