@@ -10,6 +10,16 @@ import com.hikizan.myfundamentalssubone.model.GithubUser
 class ListGithubUserAdapter(private val listGithubUser: ArrayList<GithubUser>) :
     RecyclerView.Adapter<ListGithubUserAdapter.ListViewHolder>() {
 
+    private lateinit var onItemClickCallback: OnItemClickCallback
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback){
+        this.onItemClickCallback = onItemClickCallback
+    }
+
+    interface OnItemClickCallback {
+        fun onItemClicked(data: GithubUser)
+    }
+
     class ListViewHolder(var binding: ItemRowUserBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
@@ -27,6 +37,8 @@ class ListGithubUserAdapter(private val listGithubUser: ArrayList<GithubUser>) :
             .load(photo)
             .circleCrop()
             .into(holder.binding.imgItemPhoto)
+
+        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listGithubUser[holder.adapterPosition]) }
     }
 
     override fun getItemCount(): Int = listGithubUser.size

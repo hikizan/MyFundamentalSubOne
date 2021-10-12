@@ -129,7 +129,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:padding="4dp"
+                android:padding="8dp"
                 android:text="@string/repository"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
@@ -139,7 +139,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="8dp"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 tools:text="16" />
@@ -163,7 +163,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:padding="4dp"
+                android:padding="8dp"
                 android:text="@string/followers"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
@@ -197,7 +197,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:padding="4dp"
+                android:padding="8dp"
                 android:text="@string/following"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
