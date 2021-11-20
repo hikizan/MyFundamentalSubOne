@@ -38,5 +38,6 @@
         <item name="elevation">2dp</item>
         <item name="android:orientation">vertical</item>
         <item name="cardCornerRadius">8dp</item>
+        <item name="layout_constraintWidth_percent">0.26</item>
     </style>
 </resources>
