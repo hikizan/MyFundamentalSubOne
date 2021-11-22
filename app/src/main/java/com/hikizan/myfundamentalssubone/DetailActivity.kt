@@ -3,6 +3,7 @@ package com.hikizan.myfundamentalssubone
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.bumptech.glide.Glide
 import com.hikizan.myfundamentalssubone.databinding.ActivityDetailBinding
 import com.hikizan.myfundamentalssubone.model.GithubUser

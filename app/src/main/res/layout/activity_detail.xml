@@ -119,8 +119,7 @@
             app:layout_constraintBottom_toTopOf="@+id/guideline3"
             app:layout_constraintEnd_toStartOf="@+id/cv_itemmid"
             app:layout_constraintStart_toStartOf="@+id/cv_item_user"
-            app:layout_constraintTop_toBottomOf="@+id/guideline2"
-            app:layout_constraintWidth_percent="0.26">
+            app:layout_constraintTop_toBottomOf="@+id/guideline2">
 
             <TextView
                 style="@style/DetailUser_TextMidCardContent"
@@ -139,8 +138,7 @@
             app:layout_constraintBottom_toTopOf="@+id/guideline3"
             app:layout_constraintEnd_toStartOf="@+id/cv_itemend"
             app:layout_constraintStart_toEndOf="@+id/cv_itemleft"
-            app:layout_constraintTop_toBottomOf="@+id/guideline2"
-            app:layout_constraintWidth_percent="0.26">
+            app:layout_constraintTop_toBottomOf="@+id/guideline2">
 
             <TextView
                 style="@style/DetailUser_TextMidCardContent"
@@ -159,8 +157,7 @@
             app:layout_constraintBottom_toTopOf="@+id/guideline3"
             app:layout_constraintEnd_toEndOf="@+id/cv_item_user"
             app:layout_constraintStart_toEndOf="@+id/cv_itemmid"
-            app:layout_constraintTop_toBottomOf="@+id/guideline2"
-            app:layout_constraintWidth_percent="0.26">
+            app:layout_constraintTop_toBottomOf="@+id/guideline2">
 
             <TextView
                 style="@style/DetailUser_TextMidCardContent"
